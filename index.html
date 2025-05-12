@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Clinic System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: Arial, sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-100">
+<!-- Navigation Bar -->
+<nav class="bg-blue-600 p-4 text-white">
+    <div class="container mx-auto flex justify-between">
+        <h1 class="text-xl font-bold">Medical Clinic System</h1>
+        <div>
+            <a href="#login" class="px-4">Login</a>
+            <a href="#patient" class="px-4">Patient</a>
+            <a href="#receptionist" class="px-4">Receptionist</a>
+            <a href="#doctor" class="px-4">Doctor</a>
+            <a href="#archive" class="px-4">Archive</a>
+        </div>
+    </div>
+</nav>
+
+<!-- Login Page -->
+<section id="login" class="container mx-auto p-6">
+    <h2 class="text-2xl font-bold mb-4">Login to System (Authentication)</h2>
+    <form class="bg-white p-6 rounded shadow-md">
+        <div class="mb-4">
+            <label class="block text-gray-700">National ID</label>
+            <input type="text" class="w-full p-2 border rounded" placeholder="Enter National ID">
+        </div>
+        <div class="mb-4">
+            <label class="block text-gray-700">Password</label>
+            <input type="password" class="w-full p-2 border rounded" placeholder="Password">
+        </div>
+        <button type="submit" class="bg-blue-600 text-white p-2 rounded">Login</button>
+    </form>
+</section>
+
+<!-- Patient Panel -->
+<section id="patient" class="container mx-auto p-6">
+    <h2 class="text-2xl font-bold mb-4">Patient Panel</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Request Appointment -->
+        <div class="bg-white p-6 rounded shadow-md">
+            <h3 class="text-xl font-semibold mb-4">Request Appointment</h3>
+            <form>
+                <div class="mb-4">
+                    <label class="block text-gray-700">Doctor</label>
+                    <select class="w-full p-2 border rounded">
+                        <option>Dr. Smith</option>
+                        <option>Dr. Johnson</option>
+                    </select>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700">Date</label>
+                    <input type="date" class="w-full p-2 border rounded">
+                </div>
+                <button type="submit" class="bg-blue-600 text-white p-2 rounded">Request Appointment</button>
+            </form>
+        </div>
+        <!-- Pay Appointment Fee -->
+        <div class="bg-white p-6 rounded shadow-md">
+            <h3 class="text-xl font-semibold mb-4">Pay Appointment Fee</h3>
+            <form>
+                <div class="mb-4">
+                    <label class="block text-gray-700">Amount</label>
+                    <input type="text" class="w-full p-2 border rounded" value="$50" readonly>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700">Card Number</label>
+                    <input type="text" class="w-full p-2 border rounded" placeholder="Card Number">
+                </div>
+                <button type="submit" class="bg-blue-600 text-white p-2 rounded">Pay</button>
+            </form>
+        </div>
+        <!-- Get Appointment Number -->
+        <div class="bg-white p-6 rounded shadow-md">
+            <h3 class="text-xl font-semibold mb-4">Get Appointment Number</h3>
+            <p class="mb-4">Your Appointment Number: <span class="font-bold">1234</span></p>
+            <button class="bg-blue-600 text-white p-2 rounded">Get Number</button>
+        </div>
+        <!-- View History and Prescriptions -->
+        <div class="bg-white p-6 rounded shadow-md">
+            <h3 class="text-xl font-semibold mb-4">Medical History and Prescriptions</h3>
+            <table class="w-full border">
+                <thead>
+                <tr class="bg-gray-200">
+                    <th class="p-2">Date</th>
+                    <th class="p-2">Doctor</th>
+                    <th class="p-2">Prescription</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td class="p-2">2025/05/01</td>
+                    <td class="p-2">Dr. Smith</td>
+                    <td class="p-2">Medication X</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<!-- Receptionist Panel -->
+<section id="receptionist" class="container mx-auto p-6">
+    <h2 class="text-2xl font-bold mb-4">Receptionist Panel</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Assign Appointment -->
+        <div class="bg-white p-6 rounded shadow-md">
+            <h3 class="text-xl font-semibold mb-4">Assign Appointment</h3>
+            <form>
+                <div class="mb-4">
+                    <label class="block text-gray-700">Patient National ID</label>
+                    <input type="text" class="w-full p-2 border rounded" placeholder="National ID">
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700">Doctor</label>
+                    <select class="w-full p-2 border rounded">
+                        <option>Dr. Smith</option>
+                        <option>Dr. Johnson</option>
+                    </select>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700">Date</label>
+                    <input type="date" class="w-full p-2 border rounded">
+                </div>
+                <button type="submit" class="bg-blue-600 text-white p-2 rounded">Assign Appointment</button>
+            </form>
+        </div>
+        <!-- Create Medical Record -->
+        <div class="bg-white p-6 rounded shadow-md">
+            <h3 class="text-xl font-semibold mb-4">Create Medical Record</h3>
+            <form>
+                <div class="mb-4">
+                    <label class="block text-gray-700">National ID</label>
+                    <input type="text" class="w-full p-2 border rounded" placeholder="National ID">
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700">Patient Name</label>
+                    <input type="text" class="w-full p-2 border rounded" placeholder="Patient Name">
+                </div>
+                <button type="submit" class="bg-blue-600 text-white p-2 rounded">Create Record</button>
+            </form>
+        </div>
+        <!-- Add Medical Documents -->
+        <div class="bg-white p-6 rounded shadow-md">
+            <h3 class="text-xl font-semibold mb-4">Add Medical Documents</h3>
+            <form>
+                <div class="mb-4">
+                    <label class="block text-gray-700">Archive Code</label>
+                    <input type="text" class="w-full p-2 border rounded" placeholder="Archive Code">
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700">Document File</label>
+                    <input type="file" class="w-full p-2 border rounded">
+                </div>
+                <button type="submit" class="bg-blue-600 text-white p-2 rounded">Upload</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- Doctor Panel -->
+<section id="doctor" class="container mx-auto p-6">
+    <h2 class="text-2xl font-bold mb-4">Doctor Panel</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- View Patient Record -->
+        <div class="bg-white p-6 rounded shadow-md">
+            <h3 class="text-xl font-semibold mb-4">View Patient Record</h3>
+            <form>
+                <div class="mb-4">
+                    <label class="block text-gray-700">Archive Code</label>
+                    <input type="text" class="w-full p-2 border rounded" placeholder="Archive Code">
+                </div>
+                <button type="submit" class="bg-blue-600 text-white p-2 rounded">View</button>
+            </form>
+        </div>
+        <!-- Create Prescription -->
+        <div class="bg-white p-6 rounded shadow-md">
+            <h3 class="text-xl font-semibold mb-4">Create Prescription</h3>
+            <form>
+                <div class="mb-4">
+                    <label class="block text-gray-700">Archive Code</label>
+                    <input type="text" class="w-full p-2 border rounded" placeholder="Archive Code">
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700">Prescription Details</label>
+                    <textarea class="w-full p-2 border rounded" placeholder="Medications and Instructions"></textarea>
+                </div>
+                <button type="submit" class="bg-blue-600 text-white p-2 rounded">Create Prescription</button>
+            </form>
+        </div>
+        <!-- View History -->
+        <div class="bg-white p-6 rounded shadow-md">
+            <h3 class="text-xl font-semibold mb-4">Medical History and Prescriptions</h3>
+            <form>
+                <div class="mb-4">
+                    <label class="block text-gray-700">Archive Code</label>
+                    <input type="text" class="w-full p-2 border rounded" placeholder="Archive Code">
+                </div>
+                <button type="submit" class="bg-blue-600 text-white p-2 rounded">View</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- Archive Panel -->
+<section id="archive" class="container mx-auto p-6">
+    <h2 class="text-2xl font-bold mb-4">Archive System Panel</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Manage Records -->
+        <div class="bg-white p-6 rounded shadow-md">
+            <h3 class="text-xl font-semibold mb-4">Manage Records</h3>
+            <p class="mb-4">Total Records: <span class="font-bold">500</span></p>
+            <button class="bg-blue-600 text-white p-2 rounded">Update Records</button>
+        </div>
+        <!-- Search and Retrieve Record -->
+        <div class="bg-white p-6 rounded shadow-md">
+            <h3 class="text-xl font-semibold mb-4">Search and Retrieve Record</h3>
+            <form>
+                <div class="mb-4">
+                    <label class="block text-gray-700">Archive Code</label>
+                    <input type="text" class="w-full p-2 border rounded" placeholder="Archive Code">
+                </div>
+                <button type="submit" class="bg-blue-600 text-white p-2 rounded">Search</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<script>
+    // Simple script to prevent form submission (prototype)
+    document.querySelectorAll('form').forEach(form => {
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Form submitted (prototype)');
+        });
+    });
+</script>
+</body>
+</html>
