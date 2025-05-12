@@ -1,0 +1,56 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+
+actor "Patient" as Patient
+actor "Doctor" as Doctor
+actor "Receptionist" as Receptionist
+actor "Archive System" as ArchiveSystem
+
+package "Appointment System" {
+  usecase "Request Appointment" as UC_RequestAppointment
+  usecase "Pay Appointment Fee" as UC_PayAppointment
+  usecase "Get Appointment Number" as UC_GetNumber
+  usecase "Assign Appointment" as UC_AssignAppointment
+}
+
+package "Archive System" {
+  usecase "Create Medical Record" as UC_CreateArchive
+  usecase "View Patient Record" as UC_ViewArchive
+  usecase "Create Prescription" as UC_CreatePrescription
+  usecase "Add Medical Documents" as UC_AddDocuments
+  usecase "Authenticate Patient" as UC_Authenticate
+  usecase "View History and Prescriptions" as UC_ViewHistory
+  usecase "Manage Records" as UC_ManageArchive
+  usecase "Search and Retrieve Record" as UC_SearchArchive
+}
+
+' Patient interactions
+Patient --> UC_RequestAppointment
+Patient --> UC_PayAppointment
+Patient --> UC_GetNumber
+Patient --> UC_Authenticate
+Patient --> UC_ViewHistory
+
+' Receptionist interactions
+Receptionist --> UC_AssignAppointment
+Receptionist --> UC_CreateArchive
+Receptionist --> UC_Authenticate
+Receptionist --> UC_AddDocuments
+
+' Doctor interactions
+Doctor --> UC_ViewArchive
+Doctor --> UC_CreatePrescription
+Doctor --> UC_ViewHistory
+
+' Archive System interactions
+ArchiveSystem --> UC_ManageArchive
+ArchiveSystem --> UC_SearchArchive
+ArchiveSystem --> UC_AddDocuments
+
+' Extend relationships
+UC_ViewArchive .> UC_SearchArchive : <<extend>>
+UC_ViewHistory .> UC_SearchArchive : <<extend>>
+UC_CreatePrescription .> UC_AddDocuments : <<extend>>
+
+@enduml
